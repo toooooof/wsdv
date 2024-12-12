@@ -1,0 +1,878 @@
+@font-face {
+    font-family: eastfont;
+    src: url('../fonts/SuperGroteskA-MedLF.ttf');
+}
+
+@font-face {
+    font-family: westfont;
+    src: url('../fonts/DIN1451Engschrift.ttf');
+}
+
+.board {
+    position: relative;
+    width: 721px;
+    display: inline-block;
+}
+
+.abs {
+    position: absolute;
+}
+
+.victory img {
+    width: 200px;
+    margin: 10px;
+}
+
+#linesmagnifier {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    width: 450px;
+    height: 140px;
+}
+
+.lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 5000;
+}
+
+.support {
+    text-align: center;
+    margin: 50px auto;
+    position: relative;
+    width: 934px;
+}
+
+.aire {
+    position: absolute;
+    top: 0;
+    left: 725px;
+    display: inline-block;
+    min-width: 550px;
+}
+
+body {
+    background-color: #B7AFAD;
+}
+
+h3 {
+    margin: 5px;
+    border-bottom: #000 3px solid;
+    text-align: center;
+}
+
+h3.west {color: #FBDE00;border-bottom: #FBDE00 3px solid;}
+h3.east {color: #E0130D;border-bottom: #E0130D 3px solid;}
+
+.player h3 {
+    margin: 0 0 5px 0;
+    text-align: center;
+    color: #fff;
+    border-bottom: none;
+}
+
+.player.west {border: #FBDE00 3px solid; }
+.player.east {border: #E0130D 3px solid; }
+
+.west h3 {background-color: #FBDE00;}
+.east h3 {background-color: #E0130D;}
+
+.card {
+    width: 114px;
+    border: rgba(0,0,0,0) 3px solid;
+}
+
+    .card.selectable {
+        border: #ff9900 3px solid;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .card.not.selectable {
+        border: rgba(0,0,0,0) 3px solid;
+        opacity: 0.5;
+        cursor: auto;
+    }
+    .card.pointer {
+        cursor: pointer;
+    }
+
+div.hand {display: inline-block;margin:5px}
+div.hand img.card {width: 75px;}
+div.hand img.back {width: 35px;}
+
+#cardrow {
+    text-align: center;
+}
+
+.marker { width: 30px;}
+
+/*.lines .marker { width: 65px; opacity: 0.4}*/
+
+.road {
+    position: absolute;
+    height: 50px;
+}
+
+.proposal {
+    border: #0f0 4px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index:3000;
+}
+    .proposal.new {
+        opacity: 0.6;
+    }
+    .proposal.new img {
+        opacity: 0;
+    }
+
+.factory {
+    position: absolute;
+    height: 40px;
+    z-index:1000;
+}
+
+.unrest, .socialist, .socialistsBox {
+    position: absolute;
+    height: 30px;
+    z-index:2000;
+}
+
+.ls {
+    position: absolute;
+    height: 28px;
+    z-index:2000;
+}
+
+.massprotest {
+    position: absolute;
+    height: 30px;
+    z-index:1500;
+}
+
+.number {
+    position: absolute;
+    height: 20px;
+    color: #fff;
+    z-index: 2001;
+    font-size: 1.2em;
+}
+
+.labeleast {
+    font-family: eastfont;
+}
+
+.labelwest {
+    font-family: westfont;
+    font-weight: bold;
+}
+
+.wall {
+    position: absolute;
+    height: 28px;
+}
+
+.flight {
+    position: absolute;
+    height: 28px;
+}
+
+#barre {
+    width: 1000px;
+    height: 50px;
+    background-color: #f00;
+}
+
+.flighticon {
+    width: 17px;
+}
+
+div.icon_line.selectable {
+    border: #ff9900 3px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+span.icon {
+    width: 90px;
+    margin: 5px;
+    padding: 3px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border: #ddd 2px solid;
+    cursor: pointer;
+}
+    span.icon.active {border: #ff9900 2px solid;}
+    span.icon img {
+        width: 55px;
+    }
+    span.icon img.coat {
+        position: absolute;
+        width: 20px;
+        z-index: 100;
+        left:5px;
+    }
+    span.icon span.restriction {
+        width: 90px;
+        font-size: 10px;
+        display: inline-block;
+    }
+span.icon.informative {
+    border: none;
+    cursor: auto;
+}
+    span.icon.passed {
+        display: none;
+    }
+    span.icon.informative.passed {
+        display: inline-block;
+        opacity: 0.5;
+    }
+
+div.arrowline {
+    text-align: center;
+}
+    div.arrowline span.gap {
+        display: inline-block;
+        width: 40px;
+    }
+    div.arrowline img.arrowicon {
+        width: 50px;
+        margin: 10px;
+    }
+    div.arrowline span.arrow {
+        display: inline-block;
+        width: 45px;
+    }
+    div.arrowline span.arrow button{
+        font-size: 8px;
+
+    }
+    div.arrowline span.arrow img {
+        width: 40px;
+    }
+
+.removed {
+    opacity: 0.3;
+}
+
+.police {
+    display: inline-block;
+    width: 40px;
+    position: relative;
+}
+    .police.activeable {
+        cursor: pointer;
+    }
+    .police img {
+        width: 38px;
+    }
+    .police img.cube {
+        width: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+#actiondetail {
+    text-align: center;
+    min-width: 550px;
+}
+
+#cardpopin {
+    width: 225px;
+    position: absolute;
+    display: none;
+    z-index: 4000;
+}
+
+.selector_top {
+    /*background-color: #ff9900;
+    border: #995500 4px solid;
+    opacity: 0.5;
+    display: inline-block;*/
+
+    position: absolute;
+    z-index: 3000;
+}
+
+.selector {
+    /*background-color: #ff9900;
+    border: #995500 4px solid;
+    opacity: 0.5;
+    display: inline-block;*/
+
+    cursor: pointer;
+}
+
+.discardHolder {
+    display: inline-block;
+    width: 120px;
+}
+
+.discardWarning {
+    position: relative;
+    color: #f00;
+    background-color: #f90;
+    display: inline-block;
+    width: 100%;
+    top: -30px;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    visibility: hidden;
+}
+
+#discard .discardHolder {
+    position: relative;
+}
+
+#discard .discardWarning {
+    position: absolute;
+    color: #fff;
+    display: inline;
+    top: 0;
+    right: 0;
+    height: 1em;
+    line-height: 1em;
+    visibility: visible;
+    width: auto;
+    padding: 0.2em;
+}
+
+#discard .in_cardrow .discardWarning {
+    color: #fff;
+    background-color: #3cb83c;
+}
+
+.indicators {
+    display: inline-block;
+}
+
+.indicators th, .indicators td {
+    border: #000 1px solid;
+}
+
+.indicators th {
+    padding: 0.2em;
+}
+
+.indicators .info_arrow {
+    width: 40px;
+}
+
+.indicators tbody td {
+    font-size: 1.5em;
+}
+
+.selected .discardWarning {
+    display: inline-block;
+}
+
+#actiondetail.doable .actionButton {
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.actionButton {
+    display: table-cell;
+    width: 120px;
+    margin: 50px;
+    height: 100px;
+    vertical-align: bottom;
+}
+    .actionButton span {
+        display: inline-block;
+        width: 120px;
+    }
+.actionButton img.small {width: 40px;}
+.actionButton img.medium {width: 60px;}
+.actionButton img.big {width: 70px;}
+    .actionButton.east img.west {display: none;}
+    .actionButton.west img.east {display: none;}
+
+#cardrow .actionButton {
+    display: inline-block;
+}
+
+#guillaumeaffairehelp {
+    display: none;
+}
+
+span.west {color: #FBDE00}
+span.east {color: #E0130D}
+
+#history .card.history {
+    width: 50px;
+}
+
+#history .log {
+    border: #000 1px solid;
+    margin: 5px;
+}
+#history .log.watch {
+    background-color: #6a6a79;
+}
+#history .log .header {
+    background-color: #000;
+    color: #fff;
+}
+#history .log.west .header {   background-color: #FBDE00; }
+#history .log.east .header {   background-color: #E0130D; }
+#history .log div {
+    padding: 2px;
+}
+
+#history .log .eod_icon {margin-right: 3px;}
+#history .log table {
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    border: #000 1px solid;
+    border-collapse: collapse;
+}
+
+    #history .log table td {
+        border: #000 1px solid;
+    }
+#history .log .history_logo {
+    max-height: 60px;
+}
+.workflowstatus {
+    text-align: center;
+    background-color: #251E1E;
+    padding: 3px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+}
+.workflowstatus span {
+    font-size: 18px;
+}
+.zoneText {margin:5px;display: none}
+.zoneText textarea {
+    width: 95%;
+}
+
+.zoneText div.control {
+    text-align: center;
+}
+
+#messageList span.bold {
+    font-weight: bold;
+}
+
+#discard {
+    z-index: 10000;
+    position: absolute;
+    background-color: #B7AFAD;
+    padding: 10px;
+    text-align: center;
+    border : #fff 5px solid;
+}
+
+#credits {
+    position: absolute;
+    top: 0;
+    text-align: left;
+    background-color: #B7AFAD;
+    padding: 10px;
+    width: 100%;
+    z-index: 10000;
+    display: none;
+}
+
+.menu {
+    background-color: #251E1E;
+    color: #fff;
+    padding: 3px;
+    text-align: center;
+    border-bottom: #fff 1px solid;
+}
+
+    .menu a {
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        width: 70px;
+        text-align: center;
+        font-size: 13px;
+        margin: 0 5px 0 5px;
+    }
+    .menu img {
+        width: 40px;
+    }
+    .menu span {
+        display: inline-block;
+        width: 60px;
+    }
+
+.player {
+    display: table-cell;
+    width: 40%;
+    margin: 2px;
+    text-align: center;
+    background-color: rgba(145,143,146,1);
+}
+
+#attack {
+    text-align: center;
+}
+
+#chat {
+    max-height: 300px;
+    overflow: hidden;
+}
+
+#chat.unleashed {
+    max-height: none;
+}
+
+#chat .date {
+    font-family: eastfont;
+    font-size: 0.8em;
+    width: 130px;
+    display: inline-block;
+}
+.chatentry {
+    margin-bottom: 5px;
+}
+
+#newruleswarning {
+    background-color: #eee;
+    color: #dd2200;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#newruleswarning a {
+    color: #dd2200;
+}
+
+#warningPopin {
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    display: none;
+}
+
+#warningPopin > div {
+    width: 900px;
+    margin: 80px auto;
+    padding: 15px 30px;
+    background-color: #B7AFAD;
+}
+
+#warningPopin > div > p.center, #warningPopin > div > h1 {
+    text-align: center;
+}
+
+#actiondetail.removing_icon {
+    background-color: #eee;
+}
+
+#actiondetail.removing_icon .icon {
+    border: #673ab7 2px solid;
+}
+
+.iconremovalwarning {
+    color: #673ab7;
+}
+
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
