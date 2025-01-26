@@ -11,14 +11,15 @@
     />
     <meta name="theme-color" content="#444" />
     <meta charset="UTF-8" />
-    <title>GAME TITLE</title>
-    <link rel="icon" href="favicon.svg" />
+    <title>Wir sind das Volk!</title>
+    <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="/fonts/fonts.css" />
     <link rel="stylesheet" href="/common/client.css" />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="/common/client.js"></script>
     <script defer src="play.js"></script>
     <style>
-      GAME STYLES
+      /*GAME STYLES*/
     </style>
   </head>
   <body>
@@ -39,7 +40,18 @@
       <div id="log"></div>
     </aside>
 
-    <main data-min-zoom="0.5" data-max-zoom="2.0">GAME AREA</main>
+    <main data-min-zoom="0.5" data-max-zoom="2.0">
+      <!-- Map -->
+      <div id="map">
+        <div id="markers"></div>
+      </div>
+
+      <!-- Card row -->
+      <div id="card_row"></div>
+
+      <!-- Player hand -->
+      <div id="hand"></div>
+    </main>
 
     <footer id="status"></footer>
   </body>

@@ -1,0 +1,41 @@
+main {
+  background-color: #b7b0a8;
+}
+
+#map {
+  background-image: url("./map.jpg");
+  width: 1509px;
+  height: 2259px;
+}
+
+.marker {
+  position: relative;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.marker:hover {
+  opacity: 0.2;
+}
+
+.marker.prestige {
+  background-image: url("./img/prestige_marker.png");
+}
+
+.marker.wc {
+  background-image: url("./img/wc_marker.png");
+}
+
+.marker.socialist {
+  background-image: url("./img/socialist_marker.png");
+}
+
+.marker.flight {
+  background-image: url("./img/flight_marker.png");
+}
+
+.marker.flight_track {
+  background-image: url("./img/flight_track_marker.png");
+}
