@@ -43,14 +43,46 @@
     <main data-min-zoom="0.5" data-max-zoom="2.0">
       <!-- Map -->
       <div id="map">
-        <div id="markers"></div>
+        <div id="markers">
+          <div
+            id="prestige_marker"
+            class="marker prestige"
+            style="top: 50px; left: 454px"
+          ></div>
+          <div
+            id="wc_marker"
+            class="marker wc"
+            style="top: 84px; left: 454px"
+          ></div>
+          <div
+            id="socialist_marker"
+            class="marker socialist"
+            style="top: 115px; left: 454px"
+          ></div>
+          <div
+            id="flight_marker"
+            class="marker flight"
+            style="top: 151px; left: 193px"
+          ></div>
+          <div
+            id="flight_track_marker"
+            class="marker flight_track"
+            style="top: 1944px; left: 67px"
+          ></div>
+        </div>
       </div>
 
       <!-- Card row -->
-      <div id="card_row"></div>
+      <div id="card_row_panel" class="panel">
+        <div id="card_row_header" class="panel_header">Card row</div>
+        <div id="card_row" class="panel_body"></div>
+      </div>
 
       <!-- Player hand -->
-      <div id="hand"></div>
+      <div id="player_hand_panel" class="panel">
+        <div id="player_hand_header" class="panel_header">Player hand</div>
+        <div id="player_hand" class="panel_body"></div>
+      </div>
     </main>
 
     <footer id="status"></footer>

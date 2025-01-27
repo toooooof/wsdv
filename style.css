@@ -2,6 +2,29 @@ main {
   background-color: #b7b0a8;
 }
 
+.panel {
+  background-color: #999;
+  max-width: 1650px;
+  margin: 24px auto;
+}
+
+.panel_header {
+  background-color: #555;
+  color: white;
+  font-weight: bold;
+  padding: 3px;
+  text-align: center;
+}
+
+.panel_body {
+  margin-top: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+  gap: 16px;
+  min-height: 270px;
+}
+
 #map {
   background-image: url("./map.jpg");
   width: 1509px;
@@ -14,6 +37,9 @@ main {
   width: 50px;
   height: 50px;
   border-radius: 5px;
+  transition-property: top, left;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
 }
 
 .marker:hover {
@@ -38,4 +64,81 @@ main {
 
 .marker.flight_track {
   background-image: url("./img/flight_track_marker.png");
+}
+
+#card_row {
+  display: flex;
+}
+
+.card {
+  position: relative;
+  background-size: cover;
+  width: 165px;
+  height: 256px;
+  border-radius: 5px;
+  display: inline;
+}
+
+.card.c1 {
+  background-image: url("./img/card01.png");
+}
+.card.c2 {
+  background-image: url("./img/card02.png");
+}
+.card.c3 {
+  background-image: url("./img/card03.png");
+}
+.card.c4 {
+  background-image: url("./img/card04.png");
+}
+.card.c5 {
+  background-image: url("./img/card05.png");
+}
+.card.c6 {
+  background-image: url("./img/card06.png");
+}
+.card.c7 {
+  background-image: url("./img/card07.png");
+}
+.card.c8 {
+  background-image: url("./img/card08.png");
+}
+.card.c9 {
+  background-image: url("./img/card09.png");
+}
+.card.c10 {
+  background-image: url("./img/card10.png");
+}
+.card.c11 {
+  background-image: url("./img/card11.png");
+}
+.card.c12 {
+  background-image: url("./img/card12.png");
+}
+.card.c13 {
+  background-image: url("./img/card13.png");
+}
+.card.c14 {
+  background-image: url("./img/card14.png");
+}
+.card.c15 {
+  background-image: url("./img/card15.png");
+}
+.card.c16 {
+  background-image: url("./img/card16.png");
+}
+.card.c17 {
+  background-image: url("./img/card17.png");
+}
+.card.c18 {
+  background-image: url("./img/card18.png");
+}
+.card.c19 {
+  background-image: url("./img/card19.png");
+}
+.card.c20 {
+  background-image: url("./img/card20.png");
+}
+.card.c81 {
+  background-image: url("./img/cardI.png");
 }
